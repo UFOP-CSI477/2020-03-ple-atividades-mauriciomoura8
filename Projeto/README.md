@@ -1,30 +1,35 @@
 # **CSI477-2020-03 - PLE - Proposta de Trabalho Final**
-## *Aluna(o): Princesa Leia (Luke Skywalker)*
+## *Aluna(o): Mauricio Moura dos Santos Junior*
 
 --------------
 
-<!-- Descrever um resumo sobre o trabalho. -->
-
 ### Resumo
 
-  (Apresentar um breve resumo sobre o seu trabalho, indicando o contexto e as principais funcionalidades.)
+  O trabalho desenvolvido buscará abordar o controle das atividades e dados gerados dentro de um campeonato de fuutebol virtual. A partir da criação de uma liga virtual se faz necessário o controle dos dados e eventos que acontecem durante a execução do torneio.
 
-<!-- Apresentar o tema. -->
 ### 1. Tema
 
-  O trabalho final tem como tema o desenvolvimento de ...
+  O trabalho final tem como tema o desenvolvimento de um sistema de controle para campeonatos de futebol virtual.
 
-<!-- Descrever e limitar o escopo da aplicação. -->
+
 ### 2. Escopo
 
-  Este projeto terá as seguintes funcionalidades...
+  Este projeto terá as seguintes funcionalidades:
+  - Controle de datas
+  - Controle de equipes
+  - Controle de pareamento
+  - Controle de resultados
+  - Controle de Supensões
+  - Controle vantagens e desvantagens
+  - Controle de mandos
+  - Assistências e regras
 
-<!-- Apresentar restrições de funcionalidades e de escopo. -->
+
 ### 3. Restrições
 
-  Neste trabalho não serão considerados ...
+  Neste trabalho não serão considerados aspectos relacionados a qualidade das equipes, premiações, edições em equipes.
 
-<!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
+
 ### 4. Protótipo
 
   Protótipos para as páginas (descrever quais páginas) foram elaborados, e podem ser encontrados em...
