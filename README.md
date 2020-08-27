@@ -10,5 +10,6 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Apresente uma breve descrição do seu projeto.
+Sistema para controle de jogos de um campeonato de futebol
 
+controle de jogos, pontuação, suspensões e estatísticas.
