@@ -2,10 +2,10 @@
 
 ## Atualize os seus dados:
 
-- Nome:
-- Matrícula:
-- Curso:
-- Semestre/Ano correntes:
+- Nome:Mauricio Moura dos Santos Junior
+- Matrícula:1428513 
+- Curso:Engenharia de computação  
+- Semestre/Ano correntes:2020/1
 - Link para o seu GitHub:
 
 ## [Projeto final:](./Projeto/README.md) 
