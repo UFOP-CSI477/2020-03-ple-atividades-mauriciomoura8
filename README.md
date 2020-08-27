@@ -10,6 +10,4 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Sistema para controle de jogos de um campeonato de futebol
-
-controle de jogos, pontuação, suspensões e estatísticas.
+Sistema para controle de jogos de um campeonato de futebol com jogos, pontuação, suspensões e estatísticas.
