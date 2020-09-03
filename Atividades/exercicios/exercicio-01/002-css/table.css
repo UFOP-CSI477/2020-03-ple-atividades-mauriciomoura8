@@ -1,0 +1,38 @@
+table{
+    width: 100%;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+}
+
+th{
+    font-size: 14pt;
+    font-family: tahoma;
+    font-style: italic;
+
+}
+
+caption{
+    font-size: 14pt;
+    font-family: tahoma;
+    font-weight: bold;
+}
+
+tbody tr:hover{
+    background-color: blue;
+}
+
+tbody tr:nth-child(even){
+    background-color: yellow;
+}
+
+.centralizado{
+    text-align: center;
+}
+
