@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Introduction to Js</title>
+
+
+        <script>
+
+            /*nome = mauricio; tbm funcionaria, variavel global*/
+            function Pessoa(name, surname, age, team, platform, schedule){
+                this.name = name;
+                this.surname = surname;
+                this.age = age;
+                this.team = team;
+                this.platform = platform;
+                this.schedule = schedule;
+            }
+
+            function carregarDados(){
+
+                const name = window.prompt("Insert your name: ");
+                const surname = window.prompt("Insert your surname: ");
+                const age = window.prompt("Insert your age: ");
+                const team = window.prompt("Insert your selected team: ");
+                const platform = window.prompt("Insert your selected platform to play: ");
+                const schedule = window.prompt("Insert your prefered time to play: ");
+
+                const jogador = new Pessoa(name, surname, age, team, platform, schedule);
+
+                /*document.getElementById("data").innerHTML = Date();*/
+                document.getElementById("name").innerHTML = +"Nome"+ jogador.name +" "+ jogador.surname +"<br>Idade: "+ jogador.age +"<br>Time escolhido: "+ jogador.team 
+                +"<br>Plataforma: "+ jogador.platform +"<br>Horario preferido: "+ jogador.schedule;
+
+
+            }
+
+
+        </script>
+
+<link rel="stylesheet" href="table.css">
+
+
+</head>
+<body>
+
+    <script>
+        document.write("Comece seu cadastro!!!");
+    </script>
+    <div id = name ></div>
+    <input type="button" value= "Cadastrar" onclick="carregarDados()"> 
+    
+</body>
+
+</html>
