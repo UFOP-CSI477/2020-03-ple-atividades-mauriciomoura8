@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Introduction to Js</title>
+
+
+        <script>
+
+            let contador = 1;
+            let id;
+            let controle = false;
+
+            function processo(){
+
+                document.getElementById("contador").innerHTML = "Valor: "+contador;
+                contador++;
+            }
+
+            function iniciar(){
+                let contador = 1;
+                if(!controle){
+                    id =  setInterval(processo);
+                    controle = true;
+                }
+            }
+
+            function parar(){
+                clearInterval(id);
+
+            }
+
+            function reiniciar(){
+                parar();
+                contador = 1;
+                document.getElementById("contador").innerHTML;
+                iniciar();
+
+            }
+
+            if(contador == 1000){
+                window.prompt("CHEGOOU");
+            }
+
+
+        </script>
+
+
+</head>
+
+<body>
+    
+    <div id = "contador"></div>
+
+    <input type= "button" value = "Iniciar" onclick="iniciar()">
+
+    <input type="button" value="Parar" onclick="parar()">
+    
+    <input type="button" value="Reiniciar" onclick="reiniciar()">
+
+
+</body>
+
+</html>

@@ -21,6 +21,11 @@
                 this.schedule = schedule;
             }
 
+            function Pessoa2(name, surname){
+                this.name = name;
+                this.surname = surname;
+            }
+
             function carregarDados(){
 
                 const name = window.prompt("Insert your name: ");
@@ -36,14 +41,29 @@
                 document.getElementById("name").innerHTML = +"Nome"+ jogador.name +" "+ jogador.surname +"<br>Idade: "+ jogador.age +"<br>Time escolhido: "+ jogador.team 
                 +"<br>Plataforma: "+ jogador.platform +"<br>Horario preferido: "+ jogador.schedule;
 
-
+                
             }
 
+            function carregarDadosForm(){
+                    const name = document.frmDados.name.value;
+                    const surname = document.frmDados.surname.value;
+
+                    const person = new Pessoa2(name, surname);
+                    
+                    window.alert("Dados inseridos: " +person.name +" "+ person.surname);
+
+                    let obj = {
+                        name: name,
+                        surname: surname,
+                        address: {
+                            street: "5th  venue"
+                        }
+                    };
+
+                    console.log(obj);
+                }
 
         </script>
-
-<link rel="stylesheet" href="table.css">
-
 
 </head>
 <body>
@@ -52,8 +72,37 @@
         document.write("Comece seu cadastro!!!");
     </script>
     <div id = name ></div>
+
+    <form action="post" name="frmDados">
+        <input type="text" name= "name">
+        <input type="text" name="surname">
+    </form>
+
+
     <input type="button" value= "Cadastrar" onclick="carregarDados()"> 
+    <input type="button" value= "Cadastrar a partir do Formulario" onclick="carregarDadosForm()"> 
     
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
