@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Introduction to Js</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script>
+
+
+            let contador = 0;
+            let id;
+            let controle = false;
+
+            function processo(){
+
+                document.getElementById("contador").innerHTML = "Valor: "+contador;
+                contador++;
+            }
+
+            function iniciar(){
+                
+                if(!controle){
+                    id =  setInterval(processo);
+                    controle = true;
+                    
+                }
+            }
+
+            function parar(){
+                clearInterval(id);
+
+
+            }
+
+            function Pessoa(name, surname, age, team, platform, schedule){
+                this.name = name;
+                this.surname = surname;
+                this.age = age;
+                this.team = team;
+                this.platform = platform;
+                this.schedule = schedule;
+            }
+
+        function carregarDadosForm(){
+                const name = document.frmDados.name.value;
+                const surname = document.frmDados.surname.value;
+                const age = document.frmDados.age.value;
+                const team = document.frmDados.team.value;
+                const platform = document.frmDados.platform.value;
+                const schedule = document.frmDados.schedule.value;
+
+                const person = new Pessoa(name, surname, age, team, platform, schedule);
+                contador++;
+                    
+                window.alert("Nome: " +person.name +" "+ person.surname);              
+                window.alert("Idade: " +person.age);
+                window.alert("Time escolhido: " +person.team);
+                window.alert("Plataforma: " +person.platform);
+                window.alert("Horario: " +person.schedule);
+                window.alert("Contador De pesssoas cadastradas: " +contador);
+
+                }
+
+        </script>
+</head>
+
+<body>
+    
+
+    <div id = name ></div>
+
+    <form action="post" name="frmDados">
+        <div class="form-group">
+            <label for="Nome" class = "form-check-label">Nome: </label>
+            <input type="text" name= "name" placeholder="Nome" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Sobrenome" class="form-check-label">Sobrenome: </label>
+            <input type="text" name="surname" placeholder="Sobrenome" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Idade" class="form-check-label">Idade:</label>
+            <input type="text" name="age" placeholder="Idade" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Time" class="form-check=label">Time escolhido:</label>
+            <input type="text" name="team" placeholder="Time" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Time" class="form-check=label">Plataforma:</label>
+            <input type="text" name="platform" placeholder="Plataforma" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Time" class="form-check=label">Horario:</label>
+            <input type="text" name="schedule" placeholder="Horario" class="form-control">
+        </div>
+
+    </form>        
+
+        <input type="button" value= "Cadastrar a partir do Formulario" class="btn btn-danger" onclick="carregarDadosForm(), iniciar()"> 
+
+</body>
+</html>

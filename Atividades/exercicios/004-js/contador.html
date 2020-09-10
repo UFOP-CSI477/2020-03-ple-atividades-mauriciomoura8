@@ -22,28 +22,22 @@
             }
 
             function iniciar(){
-                let contador = 1;
                 if(!controle){
-                    id =  setInterval(processo);
-                    controle = true;
-                }
-            }
+               id =  setInterval(processo);
+               controle = true;
+            }}
 
             function parar(){
                 clearInterval(id);
-
+                controle =false;
             }
 
             function reiniciar(){
                 parar();
                 contador = 1;
-                document.getElementById("contador").innerHTML;
-                iniciar();
+                document.getElementById("contador").innerHTML = "Valor: 0";
+                
 
-            }
-
-            if(contador == 1000){
-                window.prompt("CHEGOOU");
             }
 
 
