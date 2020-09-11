@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Introduction to Js</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script src = "calculo.js"></script>
+        
+</head>
+
+<body>
+    
+
+    <div id = name ></div>
+
+    <form action="post" name="frmDados">
+        <div class="form-group">
+            <label for="Nome" class = "form-check-label">Nome: </label>
+            <input type="text" name= "name" placeholder="Nome" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Sobrenome" class="form-check-label">Sobrenome: </label>
+            <input type="text" name="surname" placeholder="Sobrenome" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Idade" class="form-check-label">Idade:</label>
+            <input type="text" name="age" placeholder="Idade" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="Resultado" class="form-check=label">Resultado:</label>
+            <input type="text" name="Resultado" placeholder="Resultado" class="form-control">
+        </div>
+
+        
+
+    </form>        
+
+        <input type="button" value= "Cadastrar a partir do Formulario" class="btn btn-danger" onclick="calcular()"> 
+    
+
+</body>
+</html>
