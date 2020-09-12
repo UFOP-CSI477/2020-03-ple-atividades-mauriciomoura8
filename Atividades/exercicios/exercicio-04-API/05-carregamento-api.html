@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8>">
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1, shrink-to-fit=no">
+
+    <title>Estados IBGE</title>
+
+    <link rel="stylesheet" href="05-carregamento-api.css">
+
+    <h1>Selecionar Estado e Cidade</h1>
+
+   </head>
+
+<body onload="carregarEstados()">
+ 
+    <form>
+
+        <!--Os estados estão sendo carregados automaticamente
+        <input type="button" value="Carregar estados" onclick="carregarEstados()">-->
+
+        <select name="estados" id="estados" onchange="carregarCidades()">
+            <option value="">Selecione: </option>
+        </select>
+
+
+
+        <select name="cidades" id="cidades">
+            <option value="">Selecione: </option>
+        </select>
+
+   
+
+
+    </form>
+
+    <script src="05-carregamento-api.html.js"></script>
+
+
+
+</body>
+
+
+
+</html>

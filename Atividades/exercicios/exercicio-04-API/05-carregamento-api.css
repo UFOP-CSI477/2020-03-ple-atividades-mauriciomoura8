@@ -1,0 +1,22 @@
+label{
+    font-weight: bold;
+    font-family: Cambria;
+}
+
+h1{
+
+    text-align: center;
+}
+
+select{
+    
+        margin-top: 10pt;
+        width: 50%;
+        padding: 10px;
+        background-color: gainsboro;
+        border: 1px solid red;
+        border-radius: 0px;
+        align-content: center;
+    
+    
+}
