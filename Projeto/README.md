@@ -15,7 +15,7 @@
 ### 2. Escopo
 
   Este projeto terá as seguintes funcionalidades:
-  - Controle de equipes
+  - Controle de cadastro e gerenciamento de participantes
   - Controle de pareamento
   - Controle de resultados
   - Assistências e regras
@@ -28,8 +28,8 @@
 
 ### 4. Protótipo
 
-  
+  O escopo das funcionalidades e telas pode ser encontrado em: https://github.com/UFOP-CSI477/2020-03-ple-atividades-mauriciomoura8/Projeto/Projeto-Escopo
 
 ### 5. Referências
 
-  Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT.
+  Nenhuma referência a ser exibida.
