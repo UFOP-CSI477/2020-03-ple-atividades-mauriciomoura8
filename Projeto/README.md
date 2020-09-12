@@ -15,13 +15,9 @@
 ### 2. Escopo
 
   Este projeto terá as seguintes funcionalidades:
-  - Controle de datas
   - Controle de equipes
   - Controle de pareamento
   - Controle de resultados
-  - Controle de Supensões
-  - Controle vantagens e desvantagens
-  - Controle de mandos
   - Assistências e regras
 
 
@@ -32,7 +28,7 @@
 
 ### 4. Protótipo
 
-  Protótipos para as páginas (descrever quais páginas) foram elaborados, e podem ser encontrados em...
+  
 
 ### 5. Referências
 
