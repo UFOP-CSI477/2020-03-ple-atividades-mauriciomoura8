@@ -28,7 +28,7 @@
 
 ### 4. Protótipo
 
-  O escopo das funcionalidades e telas pode ser encontrado em: 
+  O escopo das funcionalidades e telas pode ser encontrado em: https://github.com/UFOP-CSI477/2020-03-ple-atividades-mauriciomoura8/Projeto/Projeto-Escopo
 
 ### 5. Referências
 
