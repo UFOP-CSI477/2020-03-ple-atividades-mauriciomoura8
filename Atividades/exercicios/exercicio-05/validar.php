@@ -8,7 +8,7 @@
     $email = $_POST['E-mail'];
     $Time = $_POST['Time']; 
     $Horario = $_POST['Horario'];
-    $Modo =  $_POST['Mododedisputa'];
+    $Modo =  $_POST['Modo'];
 
     echo "<h1>Olá, $Nome</h1>";
     echo "<p>Usuario: $Usuario</p>";

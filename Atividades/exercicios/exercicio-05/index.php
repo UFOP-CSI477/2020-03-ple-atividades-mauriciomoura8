@@ -64,17 +64,17 @@
         <label>Modo de disputa:</label>
 
         <div class="form-group form-check">
-            <input type="radio" name="Mododedisputa" id="Online" class="form-check-input">
+            <input type="radio" name="Modo" id="Online" class="form-check-input">
             <label for="Online" class="form-check-label" >Online</label>
         </div>
 
         <div class="form-group form-check">
-            <input type="radio" name="Mododedisputa" id="Presencial" class="form-check-input">
+            <input type="radio" name="Modo" id="Presencial" class="form-check-input">
             <label for="Presencial" class="form-check-label" >Presencial</label>
         </div>
 
         <div class="form-group form-check">
-            <input type="radio" name="Mododedisputa" id="Grupos online e finais presenciais" class="form-check-input">
+            <input type="radio" name="Modo" id="Grupos online e finais presenciais" class="form-check-input">
             <label for="Grupos online e finais presenciais" class="form-check-label" >Grupos Online e finais presenciais</label>
         </div>
 
