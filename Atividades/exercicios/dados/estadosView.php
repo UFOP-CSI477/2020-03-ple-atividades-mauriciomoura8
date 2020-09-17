@@ -17,8 +17,10 @@
              
             while($e = $estados->fetch()){
                echo "<tr>";
-                    echo "<td>" .$e["nome"] ." " .$e["sigla"] ."</td>\n";
+                    echo "<td>" .$e["nome"] ."</td>\n";
+                    echo "<td>" .$e["sigla"] ."</td>";
                 echo "</tr>";
+                
             }
         ?>
     </table>
