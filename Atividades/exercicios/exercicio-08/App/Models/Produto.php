@@ -21,6 +21,43 @@ class Produto implements ModelInterface{
 
     }
 
+    public function create(Produto $p){
+
+    }
+
+    public function read(){
+
+    }
+
+    public function update(Produto $p){
+
+    }
+
+    public function delete($id){
+
+    }
+
+    public function setId($id){
+        $this->id = $id;
+    }
+
+    public function setNome($nome){
+        $this->nome = $nome;
+    }
+
+    public function setUnidade($un){
+        $this->un = $un;
+    }
+
+    public function getNome(){
+        return $this->nome;
+    }
+
+    public function getUnidade(){
+        return $this->un;
+
+    }
+
     public function getAll(){
 
     }

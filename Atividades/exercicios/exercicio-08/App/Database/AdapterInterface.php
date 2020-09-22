@@ -5,6 +5,9 @@ interface AdapterInterface{
 
     public function open();
     public function close();
-    public function get();
+    public function getEstados($connection);
+    public function getCidades($connection);
+    public function getProdutos($connection);
+
 
 }

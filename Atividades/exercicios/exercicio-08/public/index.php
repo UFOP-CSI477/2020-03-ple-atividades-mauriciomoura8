@@ -1,33 +1,35 @@
 <?php
 
+
 require '../vendor/autoload.php';
 
 use App\Models\Estado;
+use App\Models\Produto;
 use App\Database\Connection;
 use App\Database\AdapterSQLite;
-
-
-//Configuração: 
-$dbfile = "../App/Database/database.sqlite";
-$dbuser = "";
-$dbpassword = "";
-$dbhost = "";
-
-//string de conexão - '.' concatenar
-$strConnection = "sqlite:" . $dbfile;
-
-$con = new PDO($strConnection, $dbuser, $dbpassword);
-echo'conectado';
-
-$estado = new Estado(1, "Minas Gerais", "MG");
-
-var_dump($estado);
-
-$connection = new Connection(new AdapterSQLite());
-var_dump($connection);
+use App\Views\dadosView;
 
 
 
-$connection->getAdapter()->open();
-$connection->getAdapter()->close();
-$connection->getAdapter()->get();
+//$estado = new Estado(1, "Minas Gerais", "MG");
+
+//var_dump($estado);
+
+//$connection = new Connection(new AdapterSQLite());
+//var_dump($connection);
+
+
+
+//$connection->getAdapter()->open();
+
+$conn = new Connection(new AdapterSQLite());
+
+//conexão aberta
+$connection = $conn->getAdapter()->open();
+
+//recuperando dados com a conexão
+$estados = $conn->getAdapter()->getEstados($connection);
+$cidades = $conn->getAdapter()->getCidades($connection);
+$produtos = $conn->getAdapter()->getProdutos($connection);
+
+require_once "../App/Views/TabelasView.php";

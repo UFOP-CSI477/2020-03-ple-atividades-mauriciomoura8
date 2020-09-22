@@ -2,22 +2,48 @@
 
 namespace App\Database;
 
-class AdapterSQLite implements AdapterInterface{
 
-    public function open(){
+use PDO;
+
+
+class AdapterSQLite implements AdapterInterface {
+
+    public function open()
+    {
+        $dbfile =  "../App/Database/database.sqlite";
+        $dbuser = "";
+        $dbpassword = "";
+        $dbhost = "";
+
+        $strConnection = "sqlite:" . $dbfile;
+
+        $connection = new PDO($strConnection, $dbuser, $dbpassword);
+
+        return $connection;
+    }
+
+    public function close()
+    {
+    }
+
+    public function insertProdutos($connection){
+        return $connection->query("SELECT * FROM estados");
+    }
+
+    public function getEstados($connection)
+    {
+        return $connection->query("SELECT * FROM estados");
         
-
-
-
-    echo "<br>CU<br>";
     }
 
-    public function close(){
-        echo "<br>XOTA<br>";
+    public function getCidades($connection)
+    {
+        return $connection->query("SELECT * FROM cidades");
     }
 
-    public function get(){
-        echo "<br>PAU<br>";
+    public function getProdutos($connection)
+    {
+        
+        return $connection->query("SELECT * FROM produtos");
     }
-
 }

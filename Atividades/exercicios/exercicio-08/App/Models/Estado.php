@@ -22,11 +22,12 @@ class Estado implements ModelInterface{
     }
 
     public function getAll(){
+        return $this->Estado;
 
     }
 
     public function get($id){
-
+        return $this->id;
         
     }
 

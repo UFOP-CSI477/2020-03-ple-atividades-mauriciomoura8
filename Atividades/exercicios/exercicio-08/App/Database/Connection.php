@@ -2,9 +2,12 @@
 
 namespace App\Database;
 
+use PDO;
+
 class Connection{
 
     private $adapter;
+
 
     public function __construct(AdapterInterface $adapter){
         $this->adapter = $adapter;
@@ -12,7 +15,8 @@ class Connection{
 
     
     public function getAdapter(){
-        return $this->adapter;
+
+           return $this->adapter;
     }
 
 }
