@@ -23,7 +23,7 @@ class ProdutoFactory extends Factory
     {
         return [
             'nome' => $this->faker->word,
-            'um' => $this->faker->realText(50, 2),
+            'um' => $this->faker->randomElement($array= array('pç', 'kg', 'l', 'm')),
             'qtd_estoque' => $this->faker->numberBetween(0, 1000)
         ];
     }
