@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipamento extends Model
 {
+    //traits 'múltiplas heranças'
     use HasFactory;
+
+    protected $fillable = ['name', 'id'];
+    //protected $guarded = [''];
+
+    //Um equipamento tem muitas manutenções
+    public function registros(){
+        return $this->hasMany(Registro::class);
+    }
 }

@@ -40,4 +40,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+       //Um usuário tem muitas manutenções
+       public function registros(){
+        return $this->hasMany(Registro::class);
+    }
 }

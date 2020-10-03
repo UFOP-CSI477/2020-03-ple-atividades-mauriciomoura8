@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Equipamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EquipamentoController extends Controller
 {
@@ -14,8 +15,8 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        $equipamento = Equipamento::orderBy('nome')->get();
-        return view('equipamentos.index');
+        $equipamentos = Equipamento::orderBy('id')->get();
+        return view('equipamentos.index', ['equipamentos' => $equipamentos]);
 
     }
 
@@ -26,7 +27,16 @@ class EquipamentoController extends Controller
      */
     public function create()
     {
-        //
+
+        if(auth::check()){
+
+            return view('equipamentos.create');
+
+        }
+        else{
+            session()->flash('mensagem', 'Criação não autorizada');
+            return redirect()->route('login');
+        }
     }
 
     /**
@@ -37,7 +47,10 @@ class EquipamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Equipamento::create($request->all());
+        session()->flash('mensagem', 'Equipamento cadastrado!');
+        return redirect()->route('equipamentos.index');
     }
 
     /**
@@ -48,7 +61,7 @@ class EquipamentoController extends Controller
      */
     public function show(Equipamento $equipamento)
     {
-        //
+        return view('equipamentos.show', ['equipamento' => $equipamento]);
     }
 
     /**
@@ -59,7 +72,7 @@ class EquipamentoController extends Controller
      */
     public function edit(Equipamento $equipamento)
     {
-        //
+        return view('equipamentos.edit', ['equipamento' => $equipamento]);
     }
 
     /**
@@ -71,7 +84,13 @@ class EquipamentoController extends Controller
      */
     public function update(Request $request, Equipamento $equipamento)
     {
-        //
+       // dd($request->all());
+        $equipamento->fill($request->all());
+        $equipamento->save();
+
+        session()->flash('mensagem', 'Equipamento alterado!');
+        return redirect()->route('equipamentos.index');
+
     }
 
     /**
@@ -80,8 +99,16 @@ class EquipamentoController extends Controller
      * @param  \App\Models\Equipamento  $equipamento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Equipamento $equipamento)
+    public function destroy(Equipamento $equipamento) 
     {
-        //
+        //dd($equipamento);
+        if($equipamento->registros->count() > 0){
+            session()->flash('mensagem', 'Esse equipamento possui manutenções agendadas!');
+        }else{
+            $equipamento->delete();
+            session()->flash('mensagem', 'Equipamento excluído com sucesso');
+        }
+        
+        return redirect()->route('equipamentos.index');
     }
 }

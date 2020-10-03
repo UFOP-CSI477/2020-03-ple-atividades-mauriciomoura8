@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::orderBy('nome')->get();
-        return view('users.index');
+        $users = User::orderBy('id')->get();
+        return view('users.index', ['users' => $users]);
     }
 
     /**
@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -36,7 +36,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+        session()->flash('mensagem', 'Usuario cadastrado!');
+        return redirect()->route('users.index');
     }
 
     /**
@@ -47,7 +49,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('users.show', ['user' => $user]);
     }
 
     /**
