@@ -28,6 +28,8 @@
         <th>CIDADE DA COLETA</th>
 
         <th>NOME DO LOCAL</th>
+
+        <th>EDITAR</th>
         
         </tr>
     </thead>
@@ -41,6 +43,7 @@
             <td>{{$c->pessoa->tipo}}</td>
             <td>{{$c->coleta->cidade}}</td>
             <td>{{$c->coleta->nome}}</td>
+            <td><a href="{{route('agendamentos.show', $c->id)}}">Ver</a></td>
         </tr>
         @endforeach
     </tbody>

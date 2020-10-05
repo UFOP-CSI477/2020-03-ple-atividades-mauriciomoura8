@@ -6,7 +6,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: rgb(29, 15, 15);
 }
 
 /* Custom default button */
@@ -33,7 +33,7 @@ body {
 body {
   display: -ms-flexbox;
   display: flex;
-  color: #fff;
+  color: red;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   background-color: #333;
 }
@@ -72,8 +72,8 @@ body {
 }
 
 .nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
+  color:red;
+  border-bottom-color: red;
 }
 
 @media (min-width: 48em) {

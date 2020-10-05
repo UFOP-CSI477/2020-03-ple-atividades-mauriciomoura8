@@ -1,5 +1,6 @@
 @extends ('welcome')
 
+
 @section ('conteudo')
 
 
@@ -8,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-
+                                
+    <a href="{{ route('register') }}" class="btn btn-lg btn-secondary">Registrar novo Usuário</a>
     <h2 style="margin-top:30pt;">Outras Áreas</h2>
       <a href="{{route('pessoas.create')}}" class="btn btn-lg btn-secondary">Cadastro de Pessoas</a>
       <a href="{{route('coletas.create')}}" class="btn btn-lg btn-secondary">Cadastro de Locais</a>

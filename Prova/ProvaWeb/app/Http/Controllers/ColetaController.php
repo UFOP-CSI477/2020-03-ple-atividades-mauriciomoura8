@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Coleta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ColetaController extends Controller
 {
@@ -15,7 +16,7 @@ class ColetaController extends Controller
     public function index()
     {
         $coletas = Coleta::orderBy('nome')->get();
-        return view('coletas.index');
+        return view('coletas.index', ['coletas'=>$coletas]);
     }
 
     /**
@@ -25,7 +26,13 @@ class ColetaController extends Controller
      */
     public function create()
     {
+        if (Auth::check()){
         return view('coletas.create');
+        }
+        else{
+            session()->flash('mensagem', 'Ação não permitida!');
+            return redirect()->route('login');
+        }
     }
 
     /**
@@ -36,10 +43,18 @@ class ColetaController extends Controller
      */
     public function store(Request $request)
     {
+        if (Auth::check()){
         Coleta::create($request->all());
         session()->flash('mensagem', 'Coleta cadastrada!');
         return redirect()->route('coletas.index');
     }
+
+    else{
+        session()->flash('mensagem', 'Ação não permitida!');
+        return redirect()->route('login');
+    }
+
+}
 
     /**
      * Display the specified resource.

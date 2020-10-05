@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pessoa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PessoaController extends Controller
 {
@@ -14,6 +15,7 @@ class PessoaController extends Controller
      */
     public function index()
     {
+        
         $pessoas = Pessoa::orderBy('nome')->get();
         return view('pessoas.index', ['pessoas'=>$pessoas]);
     }
@@ -25,7 +27,13 @@ class PessoaController extends Controller
      */
     public function create()
     {
+        if (Auth::check()){
         return view('pessoas.create');
+        }
+        else{
+            session()->flash('mensagem', 'Ação não permitida!');
+            return redirect()->route('login');
+        }
     }
 
     /**
@@ -36,9 +44,15 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
+        if (Auth::check()){
         Pessoa::create($request->all());
         session()->flash('mensagem', 'Pessoa cadastrado!');
         return redirect()->route('pessoas.index');
+        }
+        else{
+            session()->flash('mensagem', 'Ação não permitida!');
+            return redirect()->route('login');
+        }
     }
 
     /**

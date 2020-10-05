@@ -30,4 +30,8 @@ Route::resource('/agendamentos', AgendamentoController::class);
 
 Route::resource('/coletas', ColetaController::class);
 
-Route::resource('/administrativo', AdministrativoController::class);
+Route::resource('/administrativo', AdministrativoController::class)->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

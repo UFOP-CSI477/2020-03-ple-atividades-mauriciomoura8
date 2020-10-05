@@ -1,4 +1,4 @@
-@exteds ('welcome')
+@extends ('welcome')
 
 @section('conteudo')
 
@@ -13,8 +13,8 @@
 </head>
 <body>
 
-    @foreach($container as $chave => $cont)
-    <h2>Coletas: {{$chave}}</h2>
+    
+    <h2>Coletas:</h2>
     <table class= "table table-bordered table-hover table-striped">
     
     <thead  class="thead-dark">
@@ -38,8 +38,7 @@
 
     </table>
 
-    @endforeach 
-    
+   
 </body>
 
 

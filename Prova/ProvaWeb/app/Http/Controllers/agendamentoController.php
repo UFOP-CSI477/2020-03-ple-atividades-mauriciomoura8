@@ -6,6 +6,7 @@ use App\Models\Agendamento;
 use Illuminate\Http\Request;
 use App\Models\Coleta;
 use App\Models\Pessoa;
+use Illuminate\Support\Facades\Auth;
 
 class agendamentoController extends Controller
 {
@@ -22,7 +23,7 @@ class agendamentoController extends Controller
         ->orderBy('pessoas.nome', 'asc')
         ->get('agendamentos.*');
         
-        return view('agendamento.index');
+        return view('agendamentos.index', ['cont'=>$cont]);
     }
 
     /**
@@ -32,10 +33,17 @@ class agendamentoController extends Controller
      */
     public function create()
     {
+        if (Auth::check()){
         $coletas = Coleta::orderBy('nome')->get();
         $pessoas = Pessoa::orderBy('nome')->get();
-        return view('agendamento.create', ['coletas'=>$coletas],['pessoas'=>$pessoas]);
+        return view('agendamentos.create', ['coletas'=>$coletas, 'pessoas'=>$pessoas]);
     }
+        else{
+            session()->flash('mensagem', 'Ação não permitida!');
+            return redirect()->route('login');
+        }
+
+}
 
     /**
      * Store a newly created resource in storage.
@@ -45,9 +53,16 @@ class agendamentoController extends Controller
      */
     public function store(Request $request)
     {
+        if (Auth::check()){
         Agendamento::create($request->all());
         session()->flash('mensagem', 'Agendamento cadastrado!');
         return redirect()->route('agendamento.index');
+    }
+    else{
+        session()->flash('mensagem', 'Ação não permitida!');
+        return redirect()->route('login');
+    }
+
     }
 
     /**
@@ -57,8 +72,8 @@ class agendamentoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Agendamento $agendamento)
-    {
-        //
+    {   
+        return view('agendamentos.show', ['agendamento' => $agendamento]);
     }
 
     /**
@@ -69,7 +84,17 @@ class agendamentoController extends Controller
      */
     public function edit(Agendamento $agendamento)
     {
-        //
+        if (Auth::check()){
+            $coletas = Coleta::orderBy('id')->get();
+            $pessoas = Pessoa::orderBy('nome')->get();
+        
+            return view('agendamentos.edit', ['coletas'=>$coletas, 'pessoas'=>$pessoas, 'agendamento'=>$agendamento]);
+        }
+
+        else{
+            session()->flash('mensagem', 'Ação não permitida!');
+            return redirect()->route('login');
+        }
     }
 
     /**
@@ -81,7 +106,21 @@ class agendamentoController extends Controller
      */
     public function update(Request $request, Agendamento $agendamento)
     {
-        //
+        if (Auth::check()){
+
+            $agendamento->fill($request->all());
+            $agendamento->save();
+
+            session()->flash('mensagem', 'Agendamento alterado!');
+            return redirect()->route('agendamentos.index');
+
+        }
+
+        else{
+            session()->flash('mensagem', 'Ação não permitida!');
+            return redirect()->route('login');
+        }
+
     }
 
     /**
@@ -92,6 +131,8 @@ class agendamentoController extends Controller
      */
     public function destroy(Agendamento $agendamento)
     {
-        //
+        $agendamento->delete();
+        session()->flash('mensagem', 'Registro excluido!');
+        return redirect()->route('agendamentos.index');
     }
 }
