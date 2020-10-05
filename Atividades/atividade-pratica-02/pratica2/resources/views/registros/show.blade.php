@@ -54,5 +54,5 @@
 
     <input type="submit" class="btn btn-dark" value="Excluir">
 
-
+    </form>
 @endsection

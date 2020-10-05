@@ -84,3 +84,5 @@ Route::get('/manuequipamento', function(){
 
     return view('manuequipamentos', ['equipamentos'=> $equipamentos, 'registros' => $registros, 'container' => $container, 'users' => $users]);
 })->name('manuequipamentos');
+
+Route::resource('/manuequipamentos', relatorioregistrocontroller::class)->middleware('auth');
