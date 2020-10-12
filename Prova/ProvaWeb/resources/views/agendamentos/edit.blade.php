@@ -4,7 +4,7 @@
 
 <label for="" class="d-flex justify-content-center">Atualização de Agendamento</label>
 
-<form action="{{route('agendamentos.update', $agendamento->id)}}" method="post">
+<form action="{{route('Agendamentos.update', $agendamento->id)}}" method="post">
     
     @csrf
     @method('PUT')

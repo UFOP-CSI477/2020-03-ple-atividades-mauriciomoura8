@@ -4,7 +4,7 @@
 
 <label for="" class="d-flex justify-content-center">Cadastro de novo agendamento</label>
 
-<form action="{{route('agendamentos.store')}}" method="post">
+<form action="{{route('Agendamentos.store')}}" method="post">
     
     @csrf
 

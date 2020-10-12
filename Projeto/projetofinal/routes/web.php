@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TabelaController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\AdministrativoController;
+use App\Http\Controllers\JogoController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+
+
+Route::resource('/administrativo', AdministrativoController::class);
+
+Route::resource('/players', PlayerController::class);
+
+Route::resource('/jogos', JogoController::class);
+
+Route::resource('/tabela', TabelaController::class);
