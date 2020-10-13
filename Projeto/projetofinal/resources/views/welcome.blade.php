@@ -24,7 +24,7 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body  class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
@@ -40,9 +40,11 @@
     <h1 class="cover-heading">Seu campeonato virtual começa já!</h1>
     <p class="lead">Trabalho desenvolvido para a disciplina de Sistemas Web - ICEA/UFOP</p>
     <p class="lead">
-      <a href="{{route('tabela.index')}}" class="btn btn-lg btn-secondary">Veja como tudo está indo</a>
-      <a href="{{route('players.create')}}" class="btn btn-lg btn-secondary">Ajude na Briga</a>
-      <a href="{{route('administrativo.index')}}" class="btn btn-lg btn-secondary">Administração</a>
+      <a style="margin-top:10pt" href="{{route('tabela.index')}}" class="btn btn-lg btn-secondary">Veja como tudo está indo</a>
+      
+      <a style="margin-top:10pt" href="{{route('players.create')}}" class="btn btn-lg btn-secondary">Ajude na Briga</a>
+      
+      <a style="margin-top:10pt" href="{{route('administrativo.index')}}" class="btn btn-lg btn-secondary">Administração</a>
     </p>
     @if(session('mensagem'))
             <!--Alerta bootstrap-->
@@ -51,7 +53,7 @@
             </div>
         @endif
 
-
+    
         <!--Contéudo da página-->
         @yield('conteudo')
   </main>

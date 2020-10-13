@@ -22,7 +22,12 @@ class PlayerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'idOnline' => $this->faker->unique()->userName,
+            'timeEscolhido' =>$this->faker->word,
+            'cidade' =>$this->faker->city,
+            'plataforma' =>$this->faker->word,
         ];
     }
 }

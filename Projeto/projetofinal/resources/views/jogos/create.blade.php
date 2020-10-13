@@ -13,10 +13,10 @@
 
     <div class="col-md-6">
     <div class="form-group">
-        <label for="player1_id">Nome do Jogador 1</label>
-        <select name="player1_id" id="player1_id" class="form-control" required="required">
+        <label for="player1">Nome do Jogador 1</label>
+        <select name="player1" id="player1" class="form-control" required="required">
         @foreach($players as $player)
-        <option value="{{$player->id}}">{{$player->nome}}</option>
+        <option value="{{$player->idOnline}}">{{$player->nome}} - {{$player->idOnline}}</option>
         @endforeach
         </select>
     </div>
@@ -36,10 +36,10 @@
 
     <div class="col-md-6">
     <div class="form-group">
-        <label for="player2_id">Nome do Jogador 2</label>
-        <select name="player2_id" id="player2_id" class="form-control" required="required">
+        <label for="player2">Nome do Jogador 2</label>
+        <select name="player2" id="player2" class="form-control" required="required">
         @foreach($players as $player)
-        <option value="{{$player->id}}">{{$player->nome}}</option>
+        <option value="{{$player->idOnline}}">{{$player->nome}} - {{$player->idOnline}}</option>
         @endforeach
         </select>
     </div>

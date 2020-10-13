@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Jogo;
 use Illuminate\Http\Request;
 use App\Models\Player;
+use Illuminate\Support\Facades\DB;
 
 
 class JogoController extends Controller
@@ -27,8 +28,16 @@ class JogoController extends Controller
     public function create()
     {   
         $players = Player::orderBy('nome')->get();
-        return view('jogos.create', ['players'=>$players]);
+        $jogos = jogo::get();
+        if(sizeof($players) < 16){
+            session()->flash('mensagem', 'Número de mínimo players não atingido, cadastre mais players para iniciar o campeonato!');
+            return view('administrativo.index');
     }
+
+    else{
+        return view('jogos.create', ['players'=>$players]); 
+    }
+}
 
     /**
      * Store a newly created resource in storage.
@@ -38,10 +47,65 @@ class JogoController extends Controller
      */
     public function store(Request $request)
     {
+       $oitavas = DB::table('jogos')->where('fase', '8')->get();
+       $quartas = DB::table('jogos')->where('fase', '4')->get();
+       $semis = DB::table('jogos')->where('fase', '2')->get();
+       $jogo = jogo::get();
+
+        
+
+       if($request->fase == '8'){
+        session()->flash('mensagem', 'Jogo registrado!');
         Jogo::create($request->all());
-        session()->flash('mensagem', 'Jogo cadastrado!');
-        return redirect()->route('tabela.index');
+        }
+
+            if($request->fase == '4'){
+                if(sizeof($oitavas) != '8'){
+                    session()->flash('mensagem', 'Você precisa cadastrar oitavas de final antes de cadastrar 4ªs de final!');
+                    return redirect()->route('tabela.index');
+                }
+                else{
+                    session()->flash('mensagem', 'Jogo registrado!');
+                    Jogo::create($request->all());
+                }
+            }
+
+            if($request->fase == '2'){
+                if(sizeof($quartas) != '4'){
+                    session()->flash('mensagem', 'Você precisa cadastrar quartas de final antes de cadastrar simi de finais!');
+                    return redirect()->route('tabela.index');
+                }
+                else{
+                    session()->flash('mensagem', 'Jogo registrado!');
+                    Jogo::create($request->all());
+                }
+            }
+            
+            if($request->fase == '1'){
+                if(sizeof($semis) != '2'){
+                    session()->flash('mensagem', 'Você precisa cadastrar semi finais antes de cadastrar a grande de final!');
+                    return redirect()->route('tabela.index');
+                }
+                else{
+                    if($request->p1gols > $request->p2gols){
+                        session()->flash('mensagem', 'O vencedor da Final foi '.$request->player1);
+                        Jogo::create($request->all());
+                        return redirect()->route('tabela.index');
+                        
+                        }
+            
+                        else if($request->p2gols > $request->p1gols){
+                            session()->flash('mensagem', 'O vencedor da Final foi '.$request->player2);
+                            Jogo::create($request->all());
+                            return redirect()->route('tabela.index');
+                    }
+                }
+            }
+
     }
+
+        
+    
 
     /**
      * Display the specified resource.

@@ -11,8 +11,5 @@ class Player extends Model
 
     protected $fillable = ['nome', 'email', 'idOnline', 'timeEscolhido', 'cidade', 'plataforma', 'historico'];
 
-    public function jogos()
-    {
-        return $this->belongsToMany('App\Models\Jogo');
-    }
+    
 }

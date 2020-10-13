@@ -17,7 +17,7 @@ class CreatePlayersTable extends Migration
             $table->id();
             $table->string('nome', 100);
             $table->string('email', 100);
-            $table->string('idOnline', 100);
+            $table->string('idOnline', 100)->unique();
             $table->string('timeEscolhido', 100);
             $table->string('cidade', 100);
             $table->string('plataforma', 10);

@@ -11,11 +11,8 @@ class Jogo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['player1_id', 'player2_id', 'p1gols', 'p2gols', 'fase'];
+    protected $fillable = ['player1', 'player2', 'p1gols', 'p2gols', 'fase'];
 
-    public function players()
-    {
-        return $this->belongsToMany('App\Models\Player');
-    }
+    
 
 }

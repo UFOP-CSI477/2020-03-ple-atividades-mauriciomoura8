@@ -24,9 +24,21 @@ class PlayerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view ('players.create');
+    {   
+        $test = Player::get();
+
+        if(sizeof($test) == 16){
+        
+        session()->flash('mensagem', 'Número de players máximo atingido, tente mais tarde!');
+            return view ('welcome');
+        }
+
+        else{
+            return view ('players.create');
+        }
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -36,9 +48,11 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
+
         Player::create($request->all());
         session()->flash('mensagem', 'Player Cadastrado!');
         return redirect()->route('players.index');
+       
     }
 
     /**

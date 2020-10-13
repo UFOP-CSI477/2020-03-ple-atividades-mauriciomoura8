@@ -15,10 +15,9 @@ class CreateJogosTable extends Migration
     {
         Schema::create('jogos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('player1_id');
-            $table->foreign('player1_id')->references('id')->on('players');
-            $table->unsignedBigInteger('player2_id');
-            $table->foreign('player2_id')->references('id')->on('players');
+            $table->string('player1');
+            $table->string('player2');
+            
             $table->integer('p1gols');
             $table->integer('p2gols');
             $table->string('fase', 20);

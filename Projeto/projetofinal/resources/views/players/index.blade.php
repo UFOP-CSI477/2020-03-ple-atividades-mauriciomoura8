@@ -15,7 +15,7 @@
 
     
     <h2>Players inscritos:</h2>
-    <table class= "table table-bordered table-hover table-striped">
+    <table class= "table table-bordered table-hover table-striped table-light">
     
     <thead  class="thead-dark">
         <tr>

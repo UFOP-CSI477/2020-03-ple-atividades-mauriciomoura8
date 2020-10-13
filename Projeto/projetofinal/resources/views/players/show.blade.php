@@ -5,7 +5,7 @@
 
     <h1>Dados do Player</h1>
 
-    <table class= "table table-bordered table-hover table-striped">
+    <table class= "table table-bordered table-hover table-striped table-dark">
         <thead class="thead-dark">
             <tr>
                 <th>Nome</th>
