@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jogo;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
 class AdministrativoController extends Controller
@@ -17,5 +18,6 @@ class AdministrativoController extends Controller
         
         return view ('administrativo.index' );
     }
+
 
 }

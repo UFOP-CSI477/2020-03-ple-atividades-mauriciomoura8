@@ -64,7 +64,7 @@ class JogoController extends Controller
         }
 
             if($request->fase == '4'){
-                if(sizeof($oitavas) != '8'){
+                if(sizeof($oitavas) <= '8'){
                     session()->flash('mensagem', 'Você precisa cadastrar oitavas de final antes de cadastrar 4ªs de final!');
                     return redirect()->route('tabela.index');
                 }
@@ -95,16 +95,20 @@ class JogoController extends Controller
                 }
                 else{
                     if($request->p1gols > $request->p2gols){
-                        session()->flash('mensagem', 'O vencedor da Final foi '.$request->player1);
+                        session()->flash('mensagem', 'O VENCEDOR DO TORNEIO FOI '.$request->player1);
                         Jogo::create($request->all());
-                        return redirect()->route('administrativo.index');
+                        DB::table('jogos')->truncate();
+                        DB::table('players')->truncate();
+                        return redirect()->route('welcome');
                         
                         }
             
                         else if($request->p2gols > $request->p1gols){
-                            session()->flash('mensagem', 'O vencedor da Final foi '.$request->player2);
+                            session()->flash('mensagem', 'O VENCEDOR DO TORNEIO FOI '.$request->player2);
                             Jogo::create($request->all());
-                            return redirect()->route('administrativo.index');
+                            DB::table('jogos')->truncate();
+                            DB::table('players')->truncate();
+                            return redirect()->route('welcome');
                     }
                 }
             }
@@ -148,11 +152,7 @@ class JogoController extends Controller
      */
     public function update(Request $request, Jogo $jogo)
     {
-        $player->fill($request->all());
-        $player->save();
-
-        session()->flash('mensagem', 'Player alterado!');
-        return redirect()->route('players.index');
+       
     }
 
     /**
