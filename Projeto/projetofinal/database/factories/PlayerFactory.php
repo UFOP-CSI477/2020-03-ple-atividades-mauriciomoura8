@@ -21,13 +21,15 @@ class PlayerFactory extends Factory
      */
     public function definition()
     {
+        $time = array('Barcelona', 'Real Madrid', 'Atletico de madrid', 'Bayern munich', 'Borussia Dortmund', 'Arsenal', 'Chelsea', 'Liverpool', 'United', 'City', 'Lyon', 'PSG', 'Tottenham', 'Atalanta');
+        $plataforma = array('PS4', 'XONE', 'PC');
         return [
             'nome' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'idOnline' => $this->faker->unique()->userName,
-            'timeEscolhido' =>$this->faker->word,
+            'timeEscolhido' =>$this->faker->randomElement($time),
             'cidade' =>$this->faker->city,
-            'plataforma' =>$this->faker->word,
+            'plataforma' =>$this->faker->randomElement($plataforma),
         ];
     }
 }

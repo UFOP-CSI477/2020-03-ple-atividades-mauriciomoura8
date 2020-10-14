@@ -60,7 +60,7 @@ class JogoController extends Controller
        if($request->fase == '8'){
         session()->flash('mensagem', 'Jogo registrado!');
         Jogo::create($request->all());
-        return redirect()->route('tabela.index');
+        return redirect()->route('administrativo.index');
         }
 
             if($request->fase == '4'){
@@ -71,6 +71,8 @@ class JogoController extends Controller
                 else{
                     session()->flash('mensagem', 'Jogo registrado!');
                     Jogo::create($request->all());
+                    return redirect()->route('administrativo.index');
+
                 }
             }
 
@@ -82,6 +84,7 @@ class JogoController extends Controller
                 else{
                     session()->flash('mensagem', 'Jogo registrado!');
                     Jogo::create($request->all());
+                    return redirect()->route('administrativo.index');
                 }
             }
             
@@ -94,14 +97,14 @@ class JogoController extends Controller
                     if($request->p1gols > $request->p2gols){
                         session()->flash('mensagem', 'O vencedor da Final foi '.$request->player1);
                         Jogo::create($request->all());
-                        return redirect()->route('tabela.index');
+                        return redirect()->route('administrativo.index');
                         
                         }
             
                         else if($request->p2gols > $request->p1gols){
                             session()->flash('mensagem', 'O vencedor da Final foi '.$request->player2);
                             Jogo::create($request->all());
-                            return redirect()->route('tabela.index');
+                            return redirect()->route('administrativo.index');
                     }
                 }
             }
@@ -160,6 +163,6 @@ class JogoController extends Controller
      */
     public function destroy(Jogo $jogo)
     {
-        //
+        
     }
 }

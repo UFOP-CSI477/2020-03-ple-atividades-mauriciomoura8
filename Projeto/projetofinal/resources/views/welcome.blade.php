@@ -57,7 +57,7 @@
   <header class="masthead mb-auto">
     <div class="inner">
       <a href="{{route('welcome')}}">
-      <h3 class="masthead-brand" >YouTorn</h3>
+      <h3 class="masthead-brand" >Torn.gg</h3>
       </a>
       
     </div>
@@ -73,6 +73,8 @@
       <a style="margin-top:10pt" href="{{route('players.create')}}" class="btn btn-lg btn-secondary">Ajude na Briga</a>
       
       <a style="margin-top:10pt" href="{{route('administrativo.index')}}" class="btn btn-lg btn-secondary">Administração</a>
+
+      <a style="margin-top:10pt" href="{{route('regrasAssistencias')}}" class="btn btn-lg btn-secondary">Sobre o seu campeonato</a>
     </p>
     @if(session('mensagem'))
             <!--Alerta bootstrap-->

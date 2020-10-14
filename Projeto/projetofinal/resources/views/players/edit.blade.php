@@ -16,12 +16,12 @@
     </div>
 
     <div class="form-group">
-        <label for="email">Nome</label>
+        <label for="email">email</label>
        <input value="{{$player->email}}" type="text" class="form-control" name="email" id="email">
     </div>
 
     <div class="form-group">
-        <label for="idOnline">Descricao</label>
+        <label for="idOnline">idOnline</label>
         <input value="{{$player->idOnline}}" type="text" class="form-control" name="idOnline" id="Online">
     </div>
 
@@ -66,7 +66,7 @@
 
 
     <div class="text-right">
-        <input type="submit" value="Cadastrar" class="btn btn-primary">
+        <input type="submit" value="Atualizar" class="btn btn-primary">
         <input type="reset" value="Limpar" class="btn btn-danger">    
     </div>
 

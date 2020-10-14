@@ -24,7 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-
+Route::get('regras', function () {
+    return view('regrasAssistencias');
+})->name('regrasAssistencias');
 
 Route::resource('/administrativo', AdministrativoController::class)->middleware('auth');
 

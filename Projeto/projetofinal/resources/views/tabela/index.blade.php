@@ -28,9 +28,11 @@
 
         <th>Player 1</th>
 
+        <th>Resultado</th>
+
         <th>Player 2</th>
 
-        <th>Resultado</th>
+
 
         <th>Fase</th>
         
@@ -43,8 +45,9 @@
         @foreach($jogos as $j)
         <tr>
             <td>{{$j->player1}}</td>
-            <td>{{$j->player2}}</td>
             <td>{{$j->p1gols}}x{{$j->p2gols}}</td>
+            <td>{{$j->player2}}</td>
+            
             <td>{{$j->fase}}</td>
         </tr>
         @endforeach
