@@ -26,10 +26,14 @@ Route::get('/', function () {
 
 
 
-Route::resource('/administrativo', AdministrativoController::class);
+Route::resource('/administrativo', AdministrativoController::class)->middleware('auth');
 
-Route::resource('/players', PlayerController::class);
+Route::resource('/players', PlayerController::class)->middleware('auth');
 
-Route::resource('/jogos', JogoController::class);
+Route::resource('/jogos', JogoController::class)->middleware('auth');
 
 Route::resource('/tabela', TabelaController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

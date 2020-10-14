@@ -6,6 +6,7 @@ use App\Models\Jogo;
 use Illuminate\Http\Request;
 use App\Models\Player;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class JogoController extends Controller
@@ -27,6 +28,7 @@ class JogoController extends Controller
      */
     public function create()
     {   
+        if(Auth::check()){
         $players = Player::orderBy('nome')->get();
         $jogos = jogo::get();
         if(sizeof($players) < 16){
@@ -36,6 +38,7 @@ class JogoController extends Controller
 
     else{
         return view('jogos.create', ['players'=>$players]); 
+    }
     }
 }
 
@@ -53,10 +56,11 @@ class JogoController extends Controller
        $jogo = jogo::get();
 
         
-
+        if(Auth::check()){
        if($request->fase == '8'){
         session()->flash('mensagem', 'Jogo registrado!');
         Jogo::create($request->all());
+        return redirect()->route('tabela.index');
         }
 
             if($request->fase == '4'){
@@ -101,7 +105,7 @@ class JogoController extends Controller
                     }
                 }
             }
-
+        }
     }
 
         
@@ -126,8 +130,11 @@ class JogoController extends Controller
      */
     public function edit(Jogo $jogo)
     {
-        //
-    }
+        if(Auth::check()){
+        $jogo = jogo::get();
+
+        return view('jogo.edit', ['jogo' => $jogo]);
+    }}
 
     /**
      * Update the specified resource in storage.
@@ -138,7 +145,11 @@ class JogoController extends Controller
      */
     public function update(Request $request, Jogo $jogo)
     {
-        //
+        $player->fill($request->all());
+        $player->save();
+
+        session()->flash('mensagem', 'Player alterado!');
+        return redirect()->route('players.index');
     }
 
     /**

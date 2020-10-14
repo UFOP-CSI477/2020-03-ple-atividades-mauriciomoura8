@@ -24,7 +24,7 @@ a:hover {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
-  border: .05rem solid #fff;
+  border: .05rem solid black;
 }
 
 
@@ -42,7 +42,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   color:white;
-  text-shadow: 0 .05rem .1rem white;
+  text-shadow: 0 .05rem .1rem black;
   background-color: #333;
 }
 

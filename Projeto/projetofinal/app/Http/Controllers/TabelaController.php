@@ -11,7 +11,7 @@ class TabelaController extends Controller
 
 public function index(){
 
-        $jogos = Jogo::orderBy('id')->get();
+        $jogos = Jogo::get();
         
         return view('tabela.index', ['jogos' => $jogos]);
 

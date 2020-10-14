@@ -11,13 +11,14 @@
     <link href="{{asset('layout.css')}}" rel="stylesheet">
                                 
     
-      <a href="{{route('jogos.create')}}" class="btn btn-lg btn-secondary">Cadastro de Jogos</a>
-      <a href="{{route('players.index')}}" class="btn btn-lg btn-secondary">Informações de Players</a>
-
+    <a href="{{route('jogos.create')}}" class="btn btn-lg btn-secondary">Cadastro de Jogos</a>
+    <a href="{{route('players.index')}}" class= "btn btn-lg btn-secondary">Edicão de Players</a>
+  
 </head>
 <body>
 
 </body>
+
 
 
 

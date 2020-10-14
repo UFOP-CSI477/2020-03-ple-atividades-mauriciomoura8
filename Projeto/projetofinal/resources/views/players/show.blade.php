@@ -14,13 +14,12 @@
                 <th>Time Escolhido</th>
                 <th>Cidade</th>
                 <th>Plataforma</th>
-                <th>Historico</th>
+                
             </tr>
         
         </thead>
         <tbody>
         
-            
                 <tr>
                     <td>{{$player->nome}}</td>
                     <td>{{$player->email}}</td>
@@ -28,15 +27,10 @@
                     <td>{{$player->timeEscolhido}}</td>
                     <td>{{$player->cidade}}</td>
                     <td>{{$player->plataforma}}</td>
-                    <td>{{$player->Historico}}</td>
                     
                 </tr>
             
         </tbody>
-   
-   
-   
-   
    
    </table>
 
@@ -48,7 +42,7 @@
 
    
     <a href="{{route('players.index')}}" type="button" class="btn btn-dark">Voltar</a> 
-
+    <a href="{{route('players.edit', $player->id)}}" type="button" class="btn btn-dark">Editar</a>
     </form>
 
 @endsection
